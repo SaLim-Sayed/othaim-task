@@ -1,0 +1,52 @@
+<svg width="200" height="100" viewBox="0 0 200 100" xmlns="http://www.w3.org/2000/svg"
+    xmlns:xlink="http://www.w3.org/1999/xlink">
+    <style>
+        @keyframes cartSlide {
+            0% {
+                transform: translateX(0);
+            }
+
+            50% {
+                transform: translateX(8px);
+            }
+
+            100% {
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes pulse {
+            0% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0.7;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+    </style>
+
+    <!-- Animated M-Cart -->
+    <g transform="translate(20,30)" style="animation: cartSlide 3s ease-in-out infinite">
+        <path d="M0 40L20 0L40 20L60 0L80 40" stroke="#6C5CE7" stroke-width="6" stroke-linecap="round" fill="none" />
+        <path d="M30 30H90V35H30Z" fill="#00B894" style="animation: pulse 2s infinite" />
+    </g>
+
+    <!-- Pulsing Text -->
+    <text x="20" y="50" font-family="Montserrat, sans-serif" font-size="32" font-weight="700" fill="#2D3436"
+        style="animation: pulse 2.5s infinite 0.5s">
+        Marketly
+    </text>
+
+    <!-- Optional: Animated shopping items -->
+    <circle cx="160" cy="30" r="5" fill="#FF7675">
+        <animate attributeName="cy" values="30;25;30" dur="2s" repeatCount="indefinite" />
+    </circle>
+    <rect x="150" y="35" width="10" height="8" fill="#FDCB6E" rx="2">
+        <animate attributeName="y" values="35;30;35" dur="2s" repeatCount="indefinite" />
+    </rect>
+</svg>

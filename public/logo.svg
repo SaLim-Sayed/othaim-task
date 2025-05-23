@@ -1,0 +1,7 @@
+<svg width="200" height="80" viewBox="0 0 200 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- "M" with cart icon integrated -->
+  <path d="M20 60L40 20L60 40L80 20L100 60" stroke="#6C5CE7" stroke-width="8" stroke-linecap="round"/>
+  <!-- Cart base (hidden in the "M" stroke) -->
+  <path d="M70 50H130V55H70Z" fill="#00B894"/>
+  <text x="10" y="60" font-family="Montserrat" font-size="32" font-weight="700" fill="#2D3436">Marketly</text>
+</svg>
