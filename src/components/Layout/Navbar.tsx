@@ -27,7 +27,7 @@ export default function Navbar() {
             <Image src={Logo} alt="GoTag Logo" width={100} height={40} />
           </Link>
 
-          <div className="hidden space-x-6 text-gray-800 md:flex">
+          {/* <div className="hidden space-x-6 text-gray-800 md:flex">
             {links.map((link) => (
               <Link
                 key={link.label}
@@ -37,7 +37,7 @@ export default function Navbar() {
                 {link.label}
               </Link>
             ))}
-          </div>
+          </div> */}
 
           <div className="flex items-center space-x-2">
             <Badge color="secondary" content={count}>
@@ -51,7 +51,7 @@ export default function Navbar() {
               </Button>{" "}
             </Badge>
 
-            <Button
+            {/* <Button
               className="flex items-center justify-center md:hidden"
               isIconOnly
               variant="bordered"
@@ -62,7 +62,7 @@ export default function Navbar() {
               ) : (
                 <BiMenu className="text-xl" />
               )}
-            </Button>
+            </Button> */}
           </div>
         </div>
       </nav>
