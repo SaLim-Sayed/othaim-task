@@ -1,15 +1,14 @@
 'use client';
 
 import { Product } from '@/src/@types/product';
+import AddToCartDialog from '@/src/components/Product/AddToCartDialog';
+import { showToast } from '@/src/hooks/showToast';
 import { useCartStore } from '@/src/store/cartStore';
+import { useDisclosure } from '@heroui/react';
 import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
-import { Button } from '@heroui/react';
 import { BiCartAdd } from 'react-icons/bi';
-import { showToast } from '@/src/hooks/showToast';
-import AddToCartDialog from '@/src/components/Product/AddToCartDialog';
-import { useDisclosure } from '@heroui/react';
 
 type ProductCardProps = {
   product: Product;

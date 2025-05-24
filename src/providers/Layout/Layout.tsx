@@ -3,9 +3,10 @@ import { ReactNode, useState } from "react";
 
 import { ToastProvider } from "@heroui/react";
 import HeroUi from "./HeroUi";
-import Navbar from "@/src/components/Layout/Navbar";
-import Categories from "@/src/components/Layout/Categories";
+import Navbar from "@/src/components/Navbar/Navbar";
+import Categories from "@/src/components/Navbar/Categories";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import Footer from "@/src/components/Footer/Footer";
 
 type Props = {
   children: ReactNode;
@@ -28,9 +29,11 @@ export default function Layout({ children }: Props) {
           <Categories />
         </div>
 
-        <div className="min-h-screen pt-32">{children}</div>
+        <div className="min-h-[calc(100vh-12rem)] pt-32">{children}</div>
         <ToastProvider />
-      </HeroUi>      </QueryClientProvider>
+        <Footer />
+      </HeroUi>
+    </QueryClientProvider>
 
   );
 }

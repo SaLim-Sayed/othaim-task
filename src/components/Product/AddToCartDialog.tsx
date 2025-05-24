@@ -1,12 +1,12 @@
+import { Product } from "@/src/@types/product";
 import {
-    Modal,
-    ModalContent,
-    ModalHeader,
-    ModalBody,
-    ModalFooter,
-  } from "@heroui/react";
-  import { Button } from "@heroui/react";
-  import { Product } from "@/src/@types/product";
+  Button,
+  Modal,
+  ModalBody,
+  ModalContent,
+  ModalFooter,
+  ModalHeader,
+} from "@heroui/react";
   
   interface AddToCartDialogProps {
     isOpen: boolean;

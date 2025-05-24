@@ -1,4 +1,4 @@
- import { cn } from '@/src/lib/cn'
+import { cn } from '@/src/lib/cn'
 import React from 'react'
 
 export default function Heading({ title, className }: { title: string, className?: string }) {

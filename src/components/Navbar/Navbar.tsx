@@ -12,6 +12,7 @@ import { links } from "./links";
 import { FaCartPlus } from "react-icons/fa";
 import CartSlider from "@/src/screens/Cart/CartSlider";
 import { useCartStore } from "@/src/store/cartStore";
+import SearchAutocomplete from "./SearchAutocomplete";
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -24,20 +25,25 @@ export default function Navbar() {
       <nav className=" z-[50] fixed left-0 right-0 top-1 mx-auto w-[90%] rounded-full bg-white py-2 shadow-md">
         <div className="container mx-auto flex items-center justify-between px-6">
           <Link href="/">
-            <Image src={Logo} alt="GoTag Logo" width={100} height={40} />
+            <Image src={Logo} alt=" Logo" width={100} height={40} />
           </Link>
 
-          {/* <div className="hidden space-x-6 text-gray-800 md:flex">
+          <div className='hidden space-x-6 text-gray-800 md:flex'>
             {links.map((link) => (
               <Link
                 key={link.label}
                 href={link.href}
-                className="transition hover:text-indigo-600"
-              >
+                className='transition hover:text-indigo-600'>
                 {link.label}
               </Link>
             ))}
-          </div> */}
+          </div>
+
+          <div className="sm:flex items-center justify-center hidden"
+          >
+
+            <SearchAutocomplete />
+          </div>
 
           <div className="flex items-center space-x-2">
             <Badge color="secondary" content={count}>
@@ -51,7 +57,7 @@ export default function Navbar() {
               </Button>{" "}
             </Badge>
 
-            {/* <Button
+            <Button
               className="flex items-center justify-center md:hidden"
               isIconOnly
               variant="bordered"
@@ -62,7 +68,7 @@ export default function Navbar() {
               ) : (
                 <BiMenu className="text-xl" />
               )}
-            </Button> */}
+            </Button>
           </div>
         </div>
       </nav>
