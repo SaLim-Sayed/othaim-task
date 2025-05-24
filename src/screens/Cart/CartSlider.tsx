@@ -84,12 +84,13 @@ export default function CartSlider({ isOpen, onOpenChange }: CartSliderProps) {
                         <div className="flex-grow">
                           <h3 className="font-medium">{item.title}</h3>
                           <p className="text-sm text-gray-600">
-                            ${item.price?.toFixed(2)}
+                            ${item?.price?.toFixed(2)}
                           </p>
 
                           <div className="mt-2 flex items-center justify-between">
                             <div className="flex items-center border rounded">
                               <Button
+                                data-testid="decrease-quantity"
                                 variant="light"
                                 size="sm"
                                 isIconOnly
@@ -105,6 +106,7 @@ export default function CartSlider({ isOpen, onOpenChange }: CartSliderProps) {
                               </Button>
                               <span className="px-3">{item.quantity}</span>
                               <Button
+                                data-testid="increase-quantity"
                                 variant="light"
                                 size="sm"
                                 isIconOnly
@@ -120,6 +122,7 @@ export default function CartSlider({ isOpen, onOpenChange }: CartSliderProps) {
                             </div>
 
                             <Button
+                            data-testid="remove-item"
                               variant="light"
                               color="danger"
                               isIconOnly
@@ -172,6 +175,7 @@ export default function CartSlider({ isOpen, onOpenChange }: CartSliderProps) {
                   </div>
                 )}
                 <Button
+                data-testid="checkout-button"
                   color="secondary"
                   className="w-full"
                   isDisabled={!cartData || cartData.products.length === 0}
@@ -191,12 +195,14 @@ export default function CartSlider({ isOpen, onOpenChange }: CartSliderProps) {
                   </p>
                   <div className="flex justify-end space-x-3">
                     <Button
+                      data-testid="cancel-remove-item"
                       variant="light"
                       onPress={() => setItemToRemove(null)}
                     >
                       Cancel
                     </Button>
                     <Button
+                    data-testid="remove-item-button"
                       color="danger"
                       onPress={() => handleRemoveItem(itemToRemove)}
                     >

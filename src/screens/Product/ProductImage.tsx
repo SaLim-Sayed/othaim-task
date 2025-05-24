@@ -7,7 +7,7 @@ interface ProductImageProps {
 
 export default function ProductImage({ src, alt }: ProductImageProps) {
   return (
-    <div className="relative w-full h-[400px] rounded overflow-hidden bg-white">
+    <div data-testid="product-image" className="relative w-full h-[400px] rounded overflow-hidden bg-white">
       <Image
         src={src || "/fallback.png"}
         alt={alt}

@@ -21,13 +21,13 @@ export default function ProductInfo({
   isPending,
 }: ProductInfoProps) {
   return (
-    <div className="space-y-4">
+    <div data-testid="product-info" className="space-y-4">
       <h1 className="text-2xl font-bold">{product?.title}</h1>
       <p className="text-sm text-gray-500">{product?.brand}</p>
 
       <div className="flex items-center gap-2">
-        <p className="text-xl font-semibold text-green-600">
-          ${product?.price.toFixed(2)}
+        <p data-testid="product-price" className="text-xl font-semibold text-green-600">
+          ${product?.price?.toFixed(2)}
         </p>
         <span className="text-sm text-red-500">
           -{product?.discountPercentage}% off
@@ -37,13 +37,14 @@ export default function ProductInfo({
       <div className="flex items-center gap-2">
         <StarRating rating={product?.rating} />
         <span className="text-xs text-gray-500">
-          ({product?.rating.toFixed(1)})
+          ({product?.rating?.toFixed(1)})
         </span>
       </div>
 
       <div className="flex items-center gap-3">
         <div className="flex items-center border-2 px-3 rounded w-fit">
           <Button
+            data-testid="decrease-button"
             variant="light"
             size="sm"
             isIconOnly
@@ -53,13 +54,20 @@ export default function ProductInfo({
             -
           </Button>
           <span className="px-3">{count}</span>
-          <Button variant="light" size="sm" isIconOnly onPress={onIncrease}>
+          <Button
+            data-testid="increase-button"
+            variant="light"
+            size="sm"
+            isIconOnly
+            onPress={onIncrease}
+          >
             +
           </Button>
         </div>
 
         <Button
           onPress={onAddToCart}
+          data-testid="add-to-cart-button"
           size="lg"
           variant="flat"
           color="secondary"

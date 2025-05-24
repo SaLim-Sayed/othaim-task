@@ -47,7 +47,7 @@ export default function ShoppingCart() {
 
 
   return (
-    <div className="max-w-6xl mx-auto p-6">
+    <div data-testid="cart-container" className="max-w-6xl mx-auto p-6">
       <h1 className="text-3xl font-bold mb-8">Your Shopping Cart</h1>
 
       {!cartData || cartData.products.length === 0 ? (
@@ -57,7 +57,7 @@ export default function ShoppingCart() {
           <Button
             color="primary"
             className="mt-6"
-            onClick={() => window.history.back()}
+            onPress={() => window.history.back()}
           >
             Continue Shopping
           </Button>
@@ -85,6 +85,7 @@ export default function ShoppingCart() {
                     <div className="mt-2 flex items-center justify-between">
                       <div className="flex items-center border rounded w-fit">
                         <Button
+                          data-testid="decrease-quantity-button"
                           variant="light"
                           size="sm"
                           isIconOnly
@@ -97,6 +98,7 @@ export default function ShoppingCart() {
                         </Button>
                         <span className="px-3">{item.quantity}</span>
                         <Button
+                          data-testid="increase-quantity-button"
                           variant="light"
                           size="sm"
                           isIconOnly
@@ -109,6 +111,7 @@ export default function ShoppingCart() {
                       </div>
 
                       <Button
+                        data-testid="remove-item-button"
                         variant="light"
                         color="danger"
                         isIconOnly
@@ -140,22 +143,23 @@ export default function ShoppingCart() {
 
               <div className="space-y-3 mb-6">
                 <div className="flex justify-between">
-                  <span>Subtotal ({cartData.totalQuantity} items)</span>
-                  <span>${cartData.total?.toFixed(2)}</span>
+                  <span>Subtotal ({cartData?.totalQuantity} items)</span>
+                  <span>${cartData?.total?.toFixed(2)}</span>
                 </div>
                 <div className="flex justify-between">
                   <span>Discount</span>
                   <span className="text-green-600">
-                    -${(cartData.total - cartData.discountedTotal)?.toFixed(2)}
+                    -${(cartData?.total - cartData?.discountedTotal)?.toFixed(2)}
                   </span>
                 </div>
                 <div className="border-t pt-3 flex justify-between font-semibold">
                   <span>Total</span>
-                  <span>${cartData.discountedTotal.toFixed(2)}</span>
+                  <span>${cartData?.discountedTotal?.toFixed(2)}</span>
                 </div>
               </div>
 
               <Button
+                data-testid="checkout-button"
                 color="secondary"
                 className="w-full"
                 size="lg"
@@ -165,6 +169,7 @@ export default function ShoppingCart() {
               </Button>
 
               <Button
+                data-testid="continue-shopping-button"
                 variant="light"
                 className="w-full mt-3"
                 onPress={() => window.history.back()}
@@ -185,10 +190,10 @@ export default function ShoppingCart() {
               Are you sure you want to remove this item from your cart?
             </p>
             <div className="flex justify-end space-x-3">
-              <Button variant="light" onPress={() => setItemToRemove(null)}>
+              <Button data-testid="cancel-remove-button" variant="light" onPress={() => setItemToRemove(null)}>
                 Cancel
               </Button>
-              <Button color="danger" onPress={confirmRemove}>
+              <Button data-testid="confirm-remove-button" color="danger" onPress={confirmRemove}>
                 Remove
               </Button>
             </div>
