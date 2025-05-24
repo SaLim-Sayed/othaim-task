@@ -5,8 +5,11 @@ import AddToCartDialog from "../../components/Product/AddToCartDialog";
 import ProductImage from "./ProductImage";
 import ProductInfo from "./ProductInfo";
 import { useProductDetails } from "./useProductDetails";
+import { useParams } from "next/navigation";
 
-export default function ProductDetails({ id }: { id: string }) {
+export default function ProductDetails() {
+  const { id } = useParams() as any;
+
   const {
     data,
     isLoading,

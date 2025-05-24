@@ -8,8 +8,11 @@ import { useInView } from "react-intersection-observer";
 import { ProductResponse } from "@/src/@types/product";
 import { usePaginatedQuery } from "../../hooks/usePaginatedQuery";
 import { useProductStore } from "@/src/store/useProductStore";
+import { useParams } from "next/navigation";
 
-export default function CategoryProducts({ id }: { id: string }) {
+export default function CategoryProducts() {
+  const { slug } = useParams() as any;
+  const id=slug
   const { data, fetchNextPage, hasNextPage, isLoading, isFetchingNextPage } =
     usePaginatedQuery<ProductResponse>({
       key: ["CategoryProducts", id],
