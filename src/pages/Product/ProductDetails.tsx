@@ -4,7 +4,7 @@ import SkeletonCard from "@/src/components/ui/Skeleton/SkeletonCard";
 import AddToCartDialog from "../../components/Product/AddToCartDialog";
 import ProductImage from "./ProductImage";
 import ProductInfo from "./ProductInfo";
-import { useProductDetails } from "./useProductDetails";
+import { useProductDetails } from "../../hooks/useProductDetails";
 import { useParams } from "next/navigation";
 
 export default function ProductDetails() {
