@@ -1,7 +1,11 @@
 import CategoryProducts from '@/src/pages/Category/CategoryProducts';
 
-export default function page({ params }: { params: { slug: string } }) {
-   return (
-    <CategoryProducts id={params.slug}/>
-  )
+type Props = {
+  params: {
+    slug: string;
+  };
+};
+
+export default function Page({ params }: Props) {
+  return <CategoryProducts id={params.slug} />;
 }
