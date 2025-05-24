@@ -23,12 +23,12 @@ export default function Layout({ children }: Props) {
   return (
     <QueryClientProvider client={queryClient}>
       <HeroUi>
-        <div className=" bg-[#f7f6fa]  mb-32">
+        <div className="  bg-[#f7f6fa] ">
           <Navbar />
           <Categories />
         </div>
 
-        <div className="min-h-screen ">{children}</div>
+        <div className="min-h-screen pt-32">{children}</div>
         <ToastProvider />
       </HeroUi>      </QueryClientProvider>
 

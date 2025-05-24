@@ -32,7 +32,7 @@ export default function Categories() {
   if (isLoading) return <div> </div>;
  
   return (
-    <div className=" fixed top-20 bg-[#f7f6fa] left-0 right-0  w-full z-50   py-2 ">
+    <div className=" fixed top-20 bg-[#f7f6fa] left-0 right-0  w-full z-50    ">
       <div className="container mx-auto">
         <Swiper
           slidesPerView="auto"
