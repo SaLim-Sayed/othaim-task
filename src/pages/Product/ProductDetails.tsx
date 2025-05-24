@@ -8,8 +8,8 @@ import { useProductDetails } from "../../hooks/useProductDetails";
 import { useParams } from "next/navigation";
 
 export default function ProductDetails() {
-  const { id } = useParams() as any;
-
+  const params = useParams();
+  const id = params?.id as string;
   const {
     data,
     isLoading,
