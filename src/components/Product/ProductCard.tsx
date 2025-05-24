@@ -18,10 +18,20 @@ type ProductCardProps = {
 const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
   const { addItem } = useCartStore();
   const { isOpen, onOpen, onClose } = useDisclosure();
+
   const handleAddToCart = (
   ) => {
     onClose();
-
+    addItem({
+      id: product.id,
+      title: product.title,
+      price: product.price,
+      quantity: 1,
+      total: product.price,
+      discountPercentage: product.discountPercentage || 0,
+      discountedPrice: (product.price * (1 - (product.discountPercentage || 0) / 100)) * 1,
+      thumbnail: product.thumbnail,
+    });
     showToast("success", "Product added to cart");
   };
   return (

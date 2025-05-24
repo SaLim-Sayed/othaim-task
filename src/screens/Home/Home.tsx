@@ -44,7 +44,7 @@ export default function Home() {
   // Show products from store (Zustand + localStorage)
   return (
     <Center>
-      <div className="grid grid-cols-1 lg:grid-cols-4 md:grid-cols-3 gap-8 mt-24 py-10">
+      <div className="grid grid-cols-1 lg:grid-cols-4 md:grid-cols-3 gap-8 py-10">
         {products.map((product) => (
           <ProductCard key={product.id} product={product} />
         ))}
