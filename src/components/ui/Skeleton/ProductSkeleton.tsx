@@ -3,7 +3,7 @@ import { Card, Skeleton } from "@heroui/react";
 
 export default function ProductSkeleton() {
   return (
-    <div className="flex flex-col flex-wrap items-center gap-4 mb-4 mt-32 sm:flex-row">
+    <div className="flex flex-col flex-wrap items-center gap-4 mb-4  sm:flex-row">
       {Array.from({ length: 10 }).map((_, index) => (
         <Card key={index} className="w-[300px] space-y-5 p-4" radius="lg">
           <Skeleton className="rounded-lg">

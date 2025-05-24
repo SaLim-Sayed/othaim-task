@@ -10,17 +10,7 @@ const config: Config = {
   ],
   theme: {
     extend: {
-      colors: {
-        primary: 'var(--primary-color-900)',
-        secondary: 'var(--secondary-color-900)',
 
-        primaryColor: {
-          900: 'var(--primary-color-900)',
-        },
-        secondaryColor: {
-          900: 'var(--secondary-color-900)',
-        },
-      },
       backgroundImage: {
         mainOverlay: 'linear-gradient(180deg, rgba(0, 107, 158, 0) 0%, #002638 100%)',
         secondaryOverlay:

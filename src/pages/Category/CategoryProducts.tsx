@@ -9,43 +9,57 @@ import { ProductResponse } from "@/src/@types/product";
 import { usePaginatedQuery } from "../../hooks/usePaginatedQuery";
 import { useProductStore } from "@/src/store/useProductStore";
 
-export default function Home() {
+export default function CategoryProducts({ id }: { id: string }) {
   const { data, fetchNextPage, hasNextPage, isLoading, isFetchingNextPage } =
     usePaginatedQuery<ProductResponse>({
-      key: ["ProductList"],
-      url: "https://dummyjson.com/products",
+      key: ["CategoryProducts", id],
+      url: `https://dummyjson.com/products/category/${id}`,
       limit: 20,
     });
 
   const { ref, inView } = useInView();
-  const { products, setProducts, appendProducts } = useProductStore();
 
-  // Fetch more when inView
-  useEffect(() => {
+  const {
+    getCategoryProducts,
+    setCategoryProducts,
+    appendCategoryProducts,
+    clearCategoryProducts,
+  } = useProductStore();
+
+  const products = getCategoryProducts(id);
+
+   useEffect(() => {
     if (inView && hasNextPage) {
       fetchNextPage();
     }
   }, [inView, hasNextPage, fetchNextPage]);
 
-  // Save to Zustand store on data load
-  useEffect(() => {
+   useEffect(() => {
     if (data) {
       const allNewProducts = data.pages.flatMap((page) => page.products);
-      if (products.length === 0) {
-        setProducts(allNewProducts);
+      if (!products || products.length === 0) {
+        setCategoryProducts(id, allNewProducts);
       } else {
-        appendProducts(
+        appendCategoryProducts(
+          id,
           allNewProducts.filter((p) => !products.find((x) => x.id === p.id))
         );
       }
     }
   }, [data]);
 
-  // Show products from store (Zustand + localStorage)
+   useEffect(() => {
+    return () => {
+      clearCategoryProducts(id);
+    };
+  }, []);
+
   return (
     <Center>
-      <div className="grid grid-cols-1 lg:grid-cols-4 md:grid-cols-3 gap-8 mt-24 py-10">
-        {products.map((product) => (
+      <p className="text-2xl font-bold mb-4 text-purple-900">Products in {id}</p>
+
+      <div className="grid grid-cols-1 lg:grid-cols-4 md:grid-cols-3 gap-8  py-2">
+        {products?.map((product) => (
           <ProductCard key={product.id} product={product} />
         ))}
 
@@ -54,7 +68,6 @@ export default function Home() {
             <ProductSkeleton key={`skeleton-${i}`} />
           ))}
       </div>
-      <div ref={ref} className="h-10" />
-    </Center>
+     </Center>
   );
 }

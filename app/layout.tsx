@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   icons: {
     icon: "/favicon.ico",
     shortcut: "/favicon.ico",
-   },
+  },
 };
 
 export default function RootLayout({
@@ -32,11 +32,9 @@ export default function RootLayout({
     <html lang="en">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-         cz-shortcut-listen="true"
+        cz-shortcut-listen="true"
       >
-        <Layout>
-          <Navbar />
-          {children}</Layout>
+        <Layout>{children}</Layout>
       </body>
     </html>
   );
