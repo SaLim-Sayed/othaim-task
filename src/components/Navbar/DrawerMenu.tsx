@@ -42,7 +42,7 @@ export default function DrawerMenu({
         )}
       >
         <div className='mx-auto mt-16 mb-24 flex w-[89%] flex-col space-y-4 p-4'>
-          <SearchAutocomplete />
+          <SearchAutocomplete setIsMenuOpen={setIsMenuOpen} />
 
           {links.map((link) => (
             <Button

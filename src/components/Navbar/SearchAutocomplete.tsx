@@ -15,7 +15,13 @@ interface Product {
     thumbnail: string;
 }
 
-export default function SearchAutocomplete() {
+export default function SearchAutocomplete(
+    {
+        setIsMenuOpen,
+    }: {
+        setIsMenuOpen: (value: boolean) => void;
+    }
+) {
     const [query, setQuery] = useState("");
     const [initialResults, setInitialResults] = useState<Product[]>([]);
     const router = useRouter();
@@ -55,6 +61,7 @@ export default function SearchAutocomplete() {
                     listbox: "w-full",
                 }}
                 onSelectionChange={(key) => {
+                    setIsMenuOpen(false);
                     if (key) {
                         router.push(`/product/${key}`);
                     }

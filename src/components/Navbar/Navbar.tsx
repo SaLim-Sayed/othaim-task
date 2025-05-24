@@ -42,7 +42,7 @@ export default function Navbar() {
           <div className="sm:flex items-center justify-center hidden"
           >
 
-            <SearchAutocomplete />
+            <SearchAutocomplete setIsMenuOpen={setIsMenuOpen} />
           </div>
 
           <div className="flex items-center space-x-2">
