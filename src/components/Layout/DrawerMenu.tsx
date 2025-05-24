@@ -41,7 +41,7 @@ export default function DrawerMenu({
           isMenuOpen ? "translate-y-0" : "-top-12 -translate-y-full"
         )}
       >
-        <div className="mx-auto mt-16 mb-24 flex w-[89%] flex-col space-y-4 p-4">
+        {/* <div className="mx-auto mt-16 mb-24 flex w-[89%] flex-col space-y-4 p-4">
           {links.map((link) => (
             <Button
               key={link.label}
@@ -54,7 +54,7 @@ export default function DrawerMenu({
               {link.label}
             </Button>
           ))}
-        </div>
+        </div> */}
       </div>
     </>
   );
