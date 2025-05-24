@@ -12,10 +12,12 @@ A cutting-edge fashion e-commerce platform featuring modern UI components, smoot
 
 [![Live Demo](https://img.shields.io/badge/Live_Demo-Access_Now-FF6B6B)](https://othaim-market.vercel.app/)
 
-## 🎥 Preview
+ 
+## 📸 Application Preview
 
-https://github.com/SaLim-Sayed/othaim-task/assets/12345678/sample-video.mp4
-
+| Desktop View | Mobile View |
+|--------------|-------------|
+| ![Desktop Screenshot](./public/images/large-image.png) | ![Mobile Screenshot](./public/images/small-image.png) |
 ## 🚀 Features
 
 - **Hero UI Components** (@heroui integration)
