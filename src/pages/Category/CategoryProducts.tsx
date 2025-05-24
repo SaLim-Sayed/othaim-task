@@ -11,9 +11,8 @@ import { useProductStore } from "@/src/store/useProductStore";
 import { useParams } from "next/navigation";
 
 export default function CategoryProducts() {
-  const { slug } = useParams() as any;
-  const id=slug
-  const { data, fetchNextPage, hasNextPage, isLoading, isFetchingNextPage } =
+  const { slug:id } = useParams();
+   const { data, fetchNextPage, hasNextPage, isLoading, isFetchingNextPage } =
     usePaginatedQuery<ProductResponse>({
       key: ["CategoryProducts", id],
       url: `https://dummyjson.com/products/category/${id}`,

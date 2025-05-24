@@ -4,13 +4,13 @@ import { showToast } from "@/src/hooks/showToast";
 import { useDisclosure } from "@heroui/react";
 import { Product } from "@/src/@types/product";
 import { useApiQuery } from "@/src/hooks/useApiQuery";
-import { useCartStore } from "@/src/store/cartStore"; // Import the Zustand cart store
+import { useCartStore } from "@/src/store/cartStore";  
 
 export function useProductDetails(id: string) {
   const [count, setCount] = useState(1);
   const { isOpen, onOpen, onClose } = useDisclosure();
   const [isAdding, setIsAdding] = useState(false);
-  const { addItem } = useCartStore(); // Get addItem from cart store
+  const { addItem } = useCartStore();  
 
   const { data, isLoading, error } = useApiQuery<Product>({
     key: ["product", id],
