@@ -1,6 +1,6 @@
 "use client"
 import { useApiQuery } from "@/src/hooks/useApiQuery";
-import Home from "@/src/pages/Home/Home";
+import Home from "@/src/screens/Home/Home";
 import Image from "next/image";
 
 export default function Page() {

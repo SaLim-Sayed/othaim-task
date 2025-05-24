@@ -1,5 +1,4 @@
 "use client";
-
 import ProductCard from "@/src/components/Product/ProductCard";
 import ProductSkeleton from "@/src/components/ui/Skeleton/ProductSkeleton";
 import Center from "@/src/components/ui/Center";
@@ -11,7 +10,7 @@ import { useProductStore } from "@/src/store/useProductStore";
 import { useParams } from "next/navigation";
 
 export default function CategoryProducts() {
-  const params = useParams();
+  const params = useParams<{ slug: string }>()
   const id = params?.slug as string;
   const { data, fetchNextPage, hasNextPage, isLoading, isFetchingNextPage } =
     usePaginatedQuery<ProductResponse>({

@@ -1,4 +1,4 @@
-import CategoryProducts from '@/src/pages/Category/CategoryProducts';
+import CategoryProducts from '@/src/screens/Category/CategoryProducts';
 
  
 export default function Page() {

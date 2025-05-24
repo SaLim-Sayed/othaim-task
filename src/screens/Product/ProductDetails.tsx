@@ -8,7 +8,7 @@ import { useProductDetails } from "../../hooks/useProductDetails";
 import { useParams } from "next/navigation";
 
 export default function ProductDetails() {
-  const params = useParams();
+  const params = useParams<{ id: string }>()
   const id = params?.id as string;
   const {
     data,

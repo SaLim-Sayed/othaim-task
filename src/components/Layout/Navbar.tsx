@@ -10,7 +10,7 @@ import { BiMenu, BiX } from "react-icons/bi";
 import DrawerMenu from "./DrawerMenu";
 import { links } from "./links";
 import { FaCartPlus } from "react-icons/fa";
-import CartSlider from "@/src/pages/Cart/CartSlider";
+import CartSlider from "@/src/screens/Cart/CartSlider";
 import { useCartStore } from "@/src/store/cartStore";
 
 export default function Navbar() {
