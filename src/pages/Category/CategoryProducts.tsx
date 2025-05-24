@@ -11,8 +11,9 @@ import { useProductStore } from "@/src/store/useProductStore";
 import { useParams } from "next/navigation";
 
 export default function CategoryProducts() {
-  const { slug:id } = useParams();
-   const { data, fetchNextPage, hasNextPage, isLoading, isFetchingNextPage } =
+  const params = useParams();
+  const id = params?.slug as string;
+  const { data, fetchNextPage, hasNextPage, isLoading, isFetchingNextPage } =
     usePaginatedQuery<ProductResponse>({
       key: ["CategoryProducts", id],
       url: `https://dummyjson.com/products/category/${id}`,
@@ -30,13 +31,13 @@ export default function CategoryProducts() {
 
   const products = getCategoryProducts(id);
 
-   useEffect(() => {
+  useEffect(() => {
     if (inView && hasNextPage) {
       fetchNextPage();
     }
   }, [inView, hasNextPage, fetchNextPage]);
 
-   useEffect(() => {
+  useEffect(() => {
     if (data) {
       const allNewProducts = data.pages.flatMap((page) => page.products);
       if (!products || products.length === 0) {
@@ -50,7 +51,7 @@ export default function CategoryProducts() {
     }
   }, [data]);
 
-   useEffect(() => {
+  useEffect(() => {
     return () => {
       clearCategoryProducts(id);
     };
@@ -70,6 +71,6 @@ export default function CategoryProducts() {
             <ProductSkeleton key={`skeleton-${i}`} />
           ))}
       </div>
-     </Center>
+    </Center>
   );
 }
